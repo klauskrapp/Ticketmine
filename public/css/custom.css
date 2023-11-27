@@ -1,0 +1,44 @@
+.pointer {
+    cursor: pointer;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.required {
+    color: red;
+    font-weight: bold;
+}
+
+.notice {
+    font-size: 13px;
+}
+
+
+.selectcustom-lg {
+
+}
+.selectcustom {
+    display: block !important;
+    width: 100% !important;
+    font-size: 1rem;
+
+}
+.select2-selection {
+    min-height: calc(1.5em + 1rem + 2px) !important;
+}
+
+.select2-dropdown.increasedzindexclass {
+    z-index: 999999;
+}
+
+
+.select2-selection__rendered {
+    margin-top: 6px !important;
+}
+
+
+.select2-is-invalid {
+    border: 1px solid red !important;
+}
