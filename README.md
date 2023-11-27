@@ -1,66 +1,94 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+
+
+# About Ticketmine
+<p>
+Version: 0.0.1
 </p>
+Ticketmine is based on the laravel Framework and requires PHP8.1 and a MySQL Database.
 
-## About Laravel
+Ticketmine is designed for internal usage, and comes with a lot features e.g.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Define Projects
+- Create Users
+- Create priorities, actiontypes or states
+- Create tickets for specific projects with priorities, actiontypes, states, assigneed or follower
+- Add attachments to tickets
+- Leave comments in tickets
+- Add custom attributes to tickets
+- Receive notification emails, when editing a ticket
+- Choose between user and admin
+- german and englisch language support
+- configure custom dashboards for each user
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Admin features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Projects
+You can create mutliple projects, where tickets are assigned to. 
+You can also define, which project is visibile to the users
 
-## Learning Laravel
+### Priorities
+Create priorities (e.g. high, low, medium ) and assign them to a project.
+You can create custom priorities for each project. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Actiontypes
+Create actiontypes (e.g. bug, new feature) and assign them to a project.
+You can create custom actiontypes for each project. 
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### States
+Create states (e.g.open, in progress finished ) and assign them to a project.
+You can create custom states for each project.
+After creating some states, you have to define a state-chain.
+A state-chain defines, from which state a tickets state can switch into. 
+e.g.  open -> in progress and from in progress -> closed
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Attributes
+define custom attributes and assign them to multiple projects.
+with attributes, you can add individualized fields to tickets
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Users
+add new users to ticketmine and define, which projects they're assigned to
 
-## Contributing
+## global features
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Search, Filter
+each user can use the filterform to find some tickets. After executing a filter, 
+the user can save the filterform and create dashboard elements out of his own filters.
+e.g. create a dashboard with tickets assigned to me with the state = open
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Dashboard
+each user can define multiple dashboards and several dashboardelements to it.
+a dashboardelement can be a grid, that consumes a filter for its data or 
+an activitystream, that shows all changes to done to the tickets.
 
-## Security Vulnerabilities
+### Profile
+every user can change his own profile. e.g uploading an avatar oder changing his name
+or password. You can also define the receiving of ticketmine emails
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Creating a Ticket
+every user can create tickets, according the projects he/she is assigned to. 
+When creating new tickets, you have to choose the project, the ticket is created
+into. After that, you can set the priority, state, attributes or actiontypes the
+tickets project is assigned to.
 
-## License
+### Editing a Ticket
+When editing a ticket, you can leave new comments (also mention user or refer to tickets) or
+add attachments.
+you can change followers, assignees or the author of ticket. Change priority, state or attributes.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+### Installation
+
+
+
+
+
+
+
