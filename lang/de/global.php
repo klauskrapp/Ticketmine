@@ -1,0 +1,48 @@
+<?php
+return [
+    'dashboard' => 'Dashboard',
+    'create_ticket' => 'Ticket erstellen',
+    'search_for_ticket' => 'Nach Ticket suchen...',
+    'projects' => 'Projekte',
+    'reset' => 'Suche zurücksetzen',
+    'search' => 'Suchen',
+    'entity_deleted' => 'Eintrag gelöscht',
+    'action'        => 'Vorgangstyp',
+    'filters'        => 'Filter',
+    'show_items_per_page'   => 'Datensätze pro Seite',
+    'edit'   => 'Bearbeiten',
+
+    'back'   => 'Zurück',
+    'save'   => 'Speichern',
+    'entity_saved'  => 'Eintrag gespeichert',
+    'general'  => 'Einstellungen',
+    'position'  => 'Position',
+    'notify_ticket'  => 'Ticket erwähnen',
+    'notify_user'  => 'Benutzer erwähnen',
+    'yes'  => 'Ja',
+    'close'  => 'Schließen',
+    'transfer'  => 'Übernehmen',
+    'no'  => 'Nein',
+    'delete'  => 'Löschen',
+    'actiontype'  => 'Vorgangstyp',
+    'please_select' => 'Bitte wählen',
+    'attributes'    => 'Attribute',
+    'priority'      => 'Prioritäten',
+    'state'      => 'Status',
+    'entity_is_default' => 'Wenn Ja, wird dieser Wert bei der Anlage neuer Tickets vorausgewählt',
+    'groupstate'    => 'Status gruppieren',
+    'user'          => 'Benutzer',
+    'ticket_does_not_exist' => 'Das Ticket existiert nicht',
+    'error_fileupload'      => 'Beim Upload trat ein Fehler auf',
+    'logout'            => 'Logout',
+    'settings'          => 'Einstellungen',
+    'adminsettings'     => 'Admin-Einstellungen',
+    'profile'     => 'Mein Profil',
+    'search_for_tickets'    => 'Suchen',
+    'search_for_user'       => 'Nach Benutzern suchen',
+    'manage_dashboards'       => 'Dashboards verwalten',
+
+
+
+
+];
