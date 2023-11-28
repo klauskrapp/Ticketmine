@@ -41,6 +41,8 @@ Route::middleware(['logged_in'])->group(function () {
     Route::get( '/ticket/removeattachment/{ticketattachment}', 'App\Http\Controllers\Ticket\View\Removeattachment@execute' );
     Route::get( '/ticket/removecomment/{ticketcomment}', 'App\Http\Controllers\Ticket\View\Removecomment@execute' );
     Route::get( '/ticket/delete/{ticket}', 'App\Http\Controllers\Ticket\View\Delete@execute' );
+    Route::get( '/ticket/getattribute/{ticket}/attribute/{attribute}', 'App\Http\Controllers\Ticket\View\Getattribute@execute' );
+    Route::post( '/ticket/saveattribute/{ticket}/attribute/{attribute}', 'App\Http\Controllers\Ticket\View\Saveattribute@execute' );
 
 
 

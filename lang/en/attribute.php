@@ -5,7 +5,6 @@ return array(
     'name'        => 'Name of the attribute',
     'code'          => 'Attributecode',
     'dropdown'      => 'Dropdown',
-    'checkboxgroup'      => 'Checkboxgroup',
     'textfield'      => 'Textfield',
     'textarea'      => 'Textarea',
     'yes_no'      => 'Yes / No',
@@ -19,8 +18,8 @@ return array(
     'advanced'           => 'Advanced',
     'save_to_table'           => 'Save data to table',
     'save_to_table_notice'           => 'EAV Table where data is stored',
-    'source_model_notice'           => 'Sourcemodel, where to find the data for dropdown, multiselect oder checkboxgroup',
+    'source_model_notice'           => 'Sourcemodel, where to find the data for dropdown oder multiselect',
     'source_model'              => 'Source model',
     'manage_attribute'              => 'Manage attributes',
-    'options_can_be_added_after_saving' => 'Options can be addes after saving and only for dropdown, multiselect and checkboxgroup'
+    'options_can_be_added_after_saving' => 'Options can be addes after saving and only for dropdown and  multiselect'
 );

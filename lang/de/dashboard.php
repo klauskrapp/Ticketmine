@@ -16,4 +16,11 @@ return array(
     'assignees_changed'      => 'ändert Bearbeiter von {from} auf {to}',
     'author_changed'      => 'ändert Autor von {from} auf {to}',
     'follower_changed'      => 'ändert Beobachter von {from} auf {to}',
+    'created_new_comment'   => 'schrieb einen Kommentar',
+    'changed_comment_to'    => 'ändert Kommentar auf',
+    'changed_description_to'    => 'ändert Beschreibung auf',
+    'value_of_attribute'        => ' ändert den Wert des Attributes ',
+    'changed'                   => ' von {from} auf {to}',
+    'deleted_a_comment'         => 'löschte einen Kommentar'
+
 );

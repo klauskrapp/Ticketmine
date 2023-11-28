@@ -100,27 +100,40 @@ class Attribute
      * @param $implodeArray, if false multiselect attributes are returned as array
      * @return string $value
      */
-    public static function getAttributesValue( \App\Models\Ticket $ticket, $attribute, $implodeArray ) {
+    public static function getAttributesValue( \App\Models\Ticket $ticket, $attribute, $implodeArray, $asText ) {
         $attributes         = $ticket->getAllAttributes();
         $value              = '';
+        $datatype           = $attribute->datatype;
+        $options            = $attribute->options;
+        if ( get_class( $attribute ) != 'stdClass' ) {
+            $datatype       = $attribute->attributetype->datatype;
+            $options        = $attribute->attributeoptions;
+
+        }
+        $options        = index_by( $options, 'id');
+
+
         if( isset( $attributes[ $attribute->code ]  ) == true ) {
             $value      =  $attributes[ $attribute->code ]->getValue();
-            if( $attribute->datatype == 'dropdown') {
-                $options        = $attribute->options;
-                $options        = index_by( $options, 'id');
-
-                if( isset( $options[$value] ) == true ) {
+            if( $datatype == 'dropdown') {
+                if( isset( $options[$value] ) == true && $asText == true ) {
                     $value      = $options[$value]->name;
                 }
+
+                if( isset( $options[$value] ) == true && $asText == false ) {
+                    $value      = $options[$value]->id;
+                }
             }
-            else if( $attribute->datatype == 'multiselect' || $attribute->datatype == 'checkboxgroup'  ) {
-                $options        = $attribute->options;
-                $options        = index_by( $options, 'id');
+            else if( $datatype == 'multiselect'  ) {
                 $arrValues      = explode(',', $value );
                 $arrValResult   = array();
                 foreach( $arrValues as $val ) {
-                    if( isset( $options[ $val ] ) == true ) {
+                    if( isset( $options[ $val ] ) == true && $asText == true ) {
                         $arrValResult[]     = $options[ $val ]->name;
+                    }
+
+                    if( isset( $options[ $val ] ) == true && $asText == false ) {
+                        $arrValResult[]     = $options[ $val ]->id;
                     }
                 }
                 if( $implodeArray == true ) {
@@ -128,8 +141,10 @@ class Attribute
                 }
                 $value          = $arrValResult;
             }
-            else if( $attribute->datatype == 'yes_no' ) {
-                $value      = $value == 1 ? __('global.yes') : __('global.no');
+            else if( $datatype == 'yes_no' ) {
+                if( $asText == true ) {
+                    $value      = $value == 1 ? __('global.yes') : __('global.no');
+                }
             }
         }
         return $value;

@@ -5,7 +5,6 @@ return array(
     'name'        => 'Name des Attributes',
     'code'          => 'Attributs-Code',
     'dropdown'      => 'Einfachauswahl',
-    'checkboxgroup'      => 'Checkboxgruppe',
     'textfield'      => 'Textfeld',
     'textarea'      => 'Textbereich',
     'yes_no'      => 'Ja/Nein',
@@ -22,5 +21,5 @@ return array(
     'source_model_notice'           => 'Sourcemodel, woher beispielsweise eine Dropdown seine Daten bekommt',
     'source_model'              => 'Source model',
     'manage_attribute'              => 'Attribute verwalten',
-    'options_can_be_added_after_saving' => 'Optionen können nach dem Speichern hinzugefügt werden. Gilt nur für Dropdown, Multiselect und Checkboxgruppe'
+    'options_can_be_added_after_saving' => 'Optionen können nach dem Speichern hinzugefügt werden. Gilt nur für Dropdown und Multiselect'
 );

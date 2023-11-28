@@ -42,7 +42,8 @@ return [
     'search_for_user'       => 'Nach Benutzern suchen',
     'manage_dashboards'       => 'Dashboards verwalten',
     'dashboards'            => 'Dashboards',
-    'ticket_deleted'        =>'Ticket gelöscht'
+    'ticket_deleted'        =>'Ticket gelöscht',
+    'change_attribute'      => 'Attribut ändern'
 
 
 

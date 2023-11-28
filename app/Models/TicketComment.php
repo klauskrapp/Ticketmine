@@ -93,6 +93,21 @@ class TicketComment extends Ticket {
 
     /**
      *
+     * Relation to project 1:1
+     *
+     * @author Manuel Schäfer <mschaefer1982@gmx.de>
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function ticket() {
+        return $this->belongsTo( 'App\Models\Ticket', 'ticket_id');
+    }
+
+
+
+
+    /**
+     *
      * Relation to user 1:1
      *
      * @author Manuel Schäfer <mschaefer1982@gmx.de>

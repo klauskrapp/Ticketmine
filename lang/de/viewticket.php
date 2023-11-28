@@ -21,4 +21,8 @@ return array(
     'change_author'   => 'Ändere Autor',
     'change_follower'   => 'Ändere Beobachter',
     'remove_ticket'     => 'Ticket löschen',
+    'action'            => 'Vorgangstyp',
+    'priority'            => 'Priorität',
+    'state'             => 'Status',
+    'last_changed_by'   => 'zueletzt geändert von'
 );

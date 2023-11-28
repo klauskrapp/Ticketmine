@@ -58,13 +58,16 @@ function partition(Array $list, $p) {
  */
 function index_by( $data, $field ) {
     $arrResult      = array();
-    $dataType       = get_data_type( $data );
-    foreach( $data as $item ) {
-        if( $dataType   == 'array' ) {
-            $arrResult[ $item[ $field ] ]       = $item;
-        }
-        else {
-            $arrResult[ $item->$field ]       = $item;
+    if( $data != null ) {
+        $dataType = get_data_type($data);
+        foreach ($data as $item) {
+            if ($dataType != null) {
+                if ($dataType == 'array') {
+                    $arrResult[$item[$field]] = $item;
+                } else {
+                    $arrResult[$item->$field] = $item;
+                }
+            }
         }
     }
 
@@ -115,14 +118,15 @@ function get_ids( $data, $field, $unique = true ) {
  */
 function get_data_type( $data ) {
     $dataType           = null;
-
-    foreach( $data as $item ) {
-        if( $dataType === null ) {
-            $dataType   = 'array';
-            if( is_object( $item ) ) {
-                $dataType   = 'object';
+    if( $data != null ) {
+        foreach ($data as $item) {
+            if ($dataType === null) {
+                $dataType = 'array';
+                if (is_object($item)) {
+                    $dataType = 'object';
+                }
+                break;
             }
-            break;
         }
     }
     return $dataType;

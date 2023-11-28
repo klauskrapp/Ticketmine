@@ -21,5 +21,9 @@ return array(
     'change_author'   => 'Change author',
     'change_follower'   => 'Change follower',
     'remove_ticket'     => 'Delete ticket',
+    'action'            => 'Actiontype',
+    'priority'            => 'Priority',
+    'state'             => 'State',
+    'last_changed_by'   => 'last changed by'
 
 );

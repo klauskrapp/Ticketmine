@@ -16,4 +16,10 @@ return array(
     'assignees_changed'      => 'changed assignees from {from} to {to}',
     'author_changed'      => 'changed author from {from} to {to}',
     'follower_changed'      => 'changed follower from {from} to {to}',
+    'created_new_comment'   => 'wrote a comment',
+    'changed_comment_to'    => 'changed comment to',
+    'changed_description_to'    => 'changed description to',
+    'value_of_attribute'        => ' changed the value of ',
+    'changed'                   => ' from {from} to {to}',
+    'deleted_a_comment'         => 'deleted a comment'
 );

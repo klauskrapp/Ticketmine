@@ -12,6 +12,57 @@ Viewticket.checkFile        = function() {
     return result;
 };
 
+Viewticket.changeAttribute      = function( uiElement ) {
+    var attributeId     = jQuery(uiElement).attr('data-item-attribute_id');
+    var headline        = TRANSLATION_CHANGE_ATTRIBUTE;
+    $.ajax({
+        url:    '/ticket/getattribute/' + TICKET_ID + '/attribute/' + attributeId,
+        type:   'get',
+        data:   {
+
+        },
+        success: function( msg ) {
+
+            var onclick             = 'Viewticket.saveAttribute( this );return false;';
+            jQuery('#product-view-modal-change-item').find('.modal-footer').find('.btn-success').attr('onclick', onclick );
+            jQuery('#product-view-modal-change-item').find('.modal-footer').find('.btn-success').attr('data-item-attribute_id', attributeId );
+            headline                 = headline + ': ' + msg.attribute.name;
+
+            jQuery('#product-view-modal-change-item').find('.modal-title').html( headline );
+            //alert( jQuery(uiElement).attr('data-item-model'));
+            const myModal = new coreui.Modal(document.getElementById('product-view-modal-change-item'), {
+
+            });
+            jQuery('#product-view-modal-change-item').find('.modal-body').html( msg.html );
+            myModal.show();
+
+        }
+    })
+};
+
+Viewticket.saveAttribute        = function( uiElement ) {
+    var attribute_id    = jQuery(uiElement).attr('data-item-attribute_id');
+    var id       = '#change_attribute_element_' + attribute_id;
+    var val             = jQuery(id ).val();
+
+
+
+    $.ajax({
+        url: '/ticket/saveattribute/' + TICKET_ID + '/attribute/' + attribute_id,
+        type: 'post',
+        data: {
+            _token: CSRF_TOKEN,
+            content: val
+        },
+        success: function (msg) {
+            const myModal   = jQuery('#product-view-modal-change-item').modal('hide');
+            var textId      = '#attribute_'+attribute_id+'_text';
+            jQuery( textId ).html( msg.html );
+        }
+    });
+
+};
+
 Viewticket.removeAttachment = function( url ) {
     var r = confirm( TRANSLATION_GLOBAL_DELETE );
     if (r == true) {

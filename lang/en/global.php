@@ -41,5 +41,6 @@ return [
     'search_for_user'       => 'Search for user',
     'manage_dashboards'       => 'Manage dashboards',
     'dashboards'            => 'Dashboards',
-    'ticket_deleted'        =>'Ticket deleted'
+    'ticket_deleted'        =>'Ticket deleted',
+    'change_attribute'      => 'Change attribute'
 ];
