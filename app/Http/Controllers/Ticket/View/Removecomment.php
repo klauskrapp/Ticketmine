@@ -51,6 +51,10 @@ class Removecomment extends \App\Http\Controllers\Ticket\View\View
 
             Email::sendFinalMail($arrConfig, $arrSettings, $follower);
 
+            $desc       = $ticket->name . ' (' . $ticket->unique_id . ')';
+            \App\Helpers\Ticket::toActivityStream( $ticket->id, \auth()->user()->id, $ticket->project_id, 'comment_deleted', $desc );
+
+
             $arrResult                      = array();
             $arrResult['message_type']      = 'success';
             $arrResult['message']           = __('global.entity_saved');

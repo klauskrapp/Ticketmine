@@ -19,6 +19,9 @@ class Index extends Controller
      */
     public function execute(Request $request)
     {
+        if( auth()->check() == true ) {
+            return redirect('dashboard');
+        }
         $mView	= View::make( 'login.index' );
         return $mView;
     }

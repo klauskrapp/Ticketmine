@@ -38,7 +38,7 @@ class Delete extends \App\Http\Controllers\Ticket\View\View
 
         if( $ticket ) {
             $desc       = $ticket->name . ' (' . $ticket->unique_id . ')';
-            \App\Helpers\Ticket::toActivityStream( $ticket->id, $ticket->created_by, $ticket->project_id, 'ticket_deleted', $desc );
+            \App\Helpers\Ticket::toActivityStream( $ticket->id, \auth()->user()->id, $ticket->project_id, 'ticket_deleted', $desc );
             $this->sendDeleteEmail( $ticket );
             $ticket->delete();
         }

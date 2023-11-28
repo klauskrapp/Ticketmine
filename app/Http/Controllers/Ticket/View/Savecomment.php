@@ -41,6 +41,8 @@ class Savecomment extends \App\Http\Controllers\Ticket\View\View
                 $result['html']              = $ticket->description;
                 $this->sendNotificationmail( $ticket, $request->get('config_key'));
                 $this->sendNoticedEmail( $ticket, $ticket->description );
+                $desc                       = __('dashboard.changed_description_to')  . ': '. $ticket->description;
+                $loadedTicket               = clone $ticket;
             }
             else if( $request->get('type') == 'comment' ) {
                 $loadedTicket               = clone $ticket;
@@ -48,16 +50,19 @@ class Savecomment extends \App\Http\Controllers\Ticket\View\View
                 $ticket->ticket_id          = $request->get('ticket_id');
                 $ticket->description        = $request->get('content');
                 $ticket->created_by         = \auth()->user()->id;
+                $desc                       = __('dashboard.created_new_comment') . ': ' .  $ticket->description;
                 if( $request->get('comment_id') != '' ) {
                     $ticket->updated_by      = \auth()->user()->id;
+                    $desc                       = __('dashboard.changed_comment_to') . ': ' . $ticket->description;
                 }
                 $config                     = $request->get('comment_id') == '' ? 'new_comment_added' : 'comment_edit';
                 $ticket->save();
                 $this->sendNotificationmail( $ticket, $config);
                 $this->sendNoticedEmail( $loadedTicket, $ticket->description );
+
             }
 
-
+            \App\Helpers\Ticket::toActivityStream( $loadedTicket->id, auth()->user()->id, $loadedTicket->project_id, 'state_changed', $desc );
         }
 
         return $result;
