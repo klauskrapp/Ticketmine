@@ -77,6 +77,14 @@ return [
         'template'	=> 'emails.master_email'
     ),
 
+    'ticket_deleted' => array(
+        'subject'	=> 'email.ticket_deleted_subject',
+        'didwhat'	=> 'email.ticket_deleted_didwhat',
+        'template'	=> 'emails.master_email'
+    ),
+
+
+
 
 
 
@@ -118,9 +126,5 @@ return [
 		'didwhat'	=> 'hat das Ticket in ein Unterticket konvertiert',
 		'template'	=> 'emails.master_email'
 	),
-	'ticket_deleted' => array(
-		'subject'	=> 'Ticketsystem: {unique_id} {name} wurde gelöscht',
-		'didwhat'	=> 'hat das Ticket gelöscht',
-		'template'	=> 'emails.master_email'
-	)
+
 ];

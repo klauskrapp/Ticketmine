@@ -59,10 +59,16 @@ class SaveUpperEntity extends \App\Http\Controllers\Ticket\View\View
                 $arrSettings['ticket']		= $ticket;
 
 
+
                 $cReceiver					= Email::getEmailReceiver( $ticket, $request->get('config_key') );
                 $follower					= Email::getReceivers( $cReceiver );
 
                 Email::sendFinalMail($arrConfig, $arrSettings, $follower);
+
+                $desc                       = __('dashboard.' .  $request->get('config_key') );
+                $desc		                = str_replace( array('{from}', '{to}'), array( $before->name, $after->name ), $desc );
+
+                \App\Helpers\Ticket::toActivityStream( $ticket->id, auth()->user()->id, $ticket->project_id, 'state_changed', $desc );
 
                 $mView = View::make('ticket.view.details_persons.span', array(
                     'entity'    => $after

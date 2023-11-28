@@ -49,4 +49,8 @@ return array(
 
     'comment_removed_subject'           => 'Ticketmine: {unique_id} {name} wurde ein Kommentar gelöscht',
     'comment_removed_didwhat'           => 'Kommentar gelöscht',
+
+
+    'ticket_deleted_subject'           => 'Ticketmine: {unique_id} {name} wurde gelöscht',
+    'ticket_deleted_didwhat'           => 'Ticket wurde gelöscht',
 );

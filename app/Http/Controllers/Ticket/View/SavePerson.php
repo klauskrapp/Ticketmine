@@ -101,6 +101,16 @@ class SavePerson extends \App\Http\Controllers\Ticket\View\View
                 $cReceiver = Email::getEmailReceiver($ticket, $request->get('config_key'));
                 $follower = Email::getReceivers($cReceiver);
 
+
+                $desc                       = __('dashboard.' .  $request->get('config_key') );
+                $desc		                = str_replace( array('{from}', '{to}'), array( $from, $to ), $desc );
+
+                \App\Helpers\Ticket::toActivityStream( $ticket->id, auth()->user()->id, $ticket->project_id, 'state_changed', $desc );
+
+
+
+
+
                 Email::sendFinalMail($arrConfig, $arrSettings, $follower);
             }
 

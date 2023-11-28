@@ -51,4 +51,7 @@ return array(
 
     'comment_removed_subject'           => 'Ticketmine: {unique_id} {name} comment deleted',
     'comment_removed_didwhat'           => 'comment deleted',
+
+    'ticket_deleted_subject'           => 'Ticketmine: {unique_id} {name} has been deleted',
+    'ticket_deleted_didwhat'           => 'ticket deleted',
 );

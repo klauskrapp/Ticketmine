@@ -28,17 +28,25 @@ Viewticket.deleteComment        = function( button, id ) {
 };
 
 
-Viewticket.addComment       = function() {
-
-};
-
 Viewticket.download         = function( attachment_id ) {
     window.location.href='/ticket/downloadattachment/' + attachment_id;
 };
 
-Viewticket.addComment       = function() {
+Viewticket.delete           = function( id ) {
+    var r = confirm( TRANSLATION_GLOBAL_DELETE );
+    if (r == true) {
+        window.location.href='/ticket/delete/' + id;
+    }
+};
+
+Viewticket.addComment       = function( scrollToBottom ) {
     var span                = jQuery('#new-comment-toolbar').find('span');
     Viewticket.openTinyMCE( span );
+
+    if( scrollToBottom == true ) {
+        var height      = $(document).height();
+        $(document).scrollTop( height  );
+    }
 };
 
 Viewticket.openTinyMCE      = function( uiElement ) {
@@ -157,7 +165,7 @@ Viewticket.savePerson       = function( uiElement ) {
 
     if( ( isRequired == 'no' && value == '' ) || value != '' ) {
         showLoader();
-
+        const myModal = jQuery('#product-view-modal-change-item').modal('hide');
         $.ajax({
             type: 'POST',
             url: '/ticket/saveperson',
@@ -182,10 +190,7 @@ Viewticket.savePerson       = function( uiElement ) {
 
 Viewticket.saveUpperEntity   = function( uiElement ) {
     showLoader();
-    const myModal = new coreui.Modal(document.getElementById('product-view-modal-change-item'), {
-
-    });
-    myModal.hide();
+    const myModal = jQuery('#product-view-modal-change-item').modal('hide');
 
 
 

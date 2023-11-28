@@ -12,9 +12,11 @@
     <div class="body flex-grow-1">
         @include('components.headline', array('headline' => $entity->name ))
         <div class="card p-3">
+            @include('ticket.view.header')
+
             <div class="card-body">
 
-                @include('ticket.view.header')
+
                 @include('ticket.view.details_persons')
                 @include('ticket.view.description_date')
                 @include('ticket.view.attachment')
@@ -37,7 +39,7 @@
                 </div>
 
                 <div class="mt-3">
-                    <span onclick="Viewticket.addComment();" class="btn btn-success btn-lg" type="button">{{__('ticketview.add_comment')}}</span>
+                    <span onclick="Viewticket.addComment( false );" class="btn btn-success btn-lg" type="button">{{__('viewticket.add_comment')}}</span>
                 </div>
             </div>
             <div class="card-footer">
