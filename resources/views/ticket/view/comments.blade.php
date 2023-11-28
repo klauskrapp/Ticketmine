@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="row p-3">
-            <div style="height: 40px;" data-item-field="toolbar">
+            <div style="height: 40px;background-color: lightblue" data-item-field="toolbar">
 
                     <span class="btn btn-danger" onclick="Viewticket.deleteComment( this, '<?php echo $comment->id; ?>' );" style="float:right; margin-top: 5px;margin-right: 10px;">
                         <svg class="icon">

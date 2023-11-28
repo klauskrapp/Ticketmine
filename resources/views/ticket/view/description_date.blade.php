@@ -14,7 +14,7 @@
                     </button>
                 </h2>
                 <div class="accordion-collapse collapse show" id="collapseDescription" aria-labelledby="headingOne" data-coreui-parent="#accordionExample">
-                    <div style="height: 40px;" data-item-field="toolbar">
+                    <div style="height: 40px;background-color: lightblue" data-item-field="toolbar">
                         <span onclick="Viewticket.openTinyMCE( this );" data-item-config="description_changed" data-item-type="description" data-item-comment_id="" data-item-ticket_id="{{$entity->id}}" class="btn btn-success" style="float:right; margin-top: 5px;margin-right: 10px;">
                             <svg class="icon">
                                 <use xlink:href="/coreui/4_2/dist/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use>

@@ -65,6 +65,7 @@
     var TRANSLATION_GLOBAL_FILEUPLOAD_ERROR                    = '{{__('global.error_fileupload')}}';
     var TRANSLATION_GLOBAL_SAVE                    = '{{__('global.save')}}';
     var TRANSLATION_GLOBAL_CLOSE                    = '{{__('global.close')}}';
+    var TRANSLATION_CHANGE_ATTRIBUTE                    = '{{__('global.change_attribute')}}';
 </script>
 
 
