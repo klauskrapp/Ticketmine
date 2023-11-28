@@ -1,4 +1,7 @@
-<?php $value        = \App\Helpers\Attribute::getAttributesValue( $entity, $attribute, false, false  );?>
+<?php
+    $value          = \App\Helpers\Attribute::getAttributesValue( $entity, $attribute, false, false  );
+    $value          = is_array( $value ) == false ? array() : $value;
+?>
 <select id="change_attribute_element_{{$attribute->id}}" class="form-select form-select-lg" multiple>
     <option value="">{{__('global.please_select')}}</option>
     @foreach($attribute->attributeoptions as $option )

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Ticket\View;
 use App\Helpers\Email;
+use App\Jobs\TicketIndex;
 use App\Models\Attribute;
 use App\Models\Project;
 use App\Models\Ticket;
@@ -53,6 +54,7 @@ class Saveattribute extends \App\Http\Controllers\Ticket\View\View
             $desc                       = __('dashboard.value_of_attribute') . ' ' . $attribute->name . ' ' . __('dashboard.changed');
             $desc		                = str_replace( array('{from}', '{to}'), array( $before, $after ), $desc );
 
+            \Queue::later(30, new TicketIndex( $ticket->id ) );
             \App\Helpers\Ticket::toActivityStream( $ticket->id, auth()->user()->id, $ticket->project_id, 'state_changed', $desc );
         }
         return $return;
