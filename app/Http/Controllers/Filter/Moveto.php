@@ -23,10 +23,10 @@ class Moveto extends Filter
      *
      * @param Request $request
      * @param \App\Models\Dashboard $dashboard
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse
      *
      */
-    public function execute(Request $request, \App\Models\Filter $filter ) {
+    public function execute(Request $request, \App\Models\Filter $filter ):\Illuminate\Http\RedirectResponse {
         $url            = url('search');
         if( $filter->user_id == auth()->user()->id ) {
             $url        = url('search') . $filter->querystring;

@@ -54,4 +54,8 @@ return array(
 
     'ticket_deleted_subject'           => 'Ticketmine: {unique_id} {name} has been deleted',
     'ticket_deleted_didwhat'           => 'ticket deleted',
+
+
+    'attributes_changed_subject'        => 'Ticketmine: {unique_id} {name} has changed attribute',
+    'attributes_changed_didwhat'        => 'attribute {attribute} changed: from <b>{from}</b> to <b>{to}</b>',
 );

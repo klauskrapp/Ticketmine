@@ -55,7 +55,7 @@ return [
     ),
 
     'comment_mention' => array(
-        'subject'	=> 'email.comment_mention_subjectTicketsystem: {unique_id} {name} - Erwähnung in Kommentar',
+        'subject'	=> 'email.comment_mention_subject',
         'didwhat'	=> 'email.comment_mention_didwhat',
         'template'	=> 'emails.master_email'
     ),
@@ -82,49 +82,17 @@ return [
         'didwhat'	=> 'email.ticket_deleted_didwhat',
         'template'	=> 'emails.master_email'
     ),
-
-
-
-
-
-
-
-
-
-
-
-
 	'attributes_changed' => array(
-		'subject'	=> 'Ticketsystem: {unique_id} {name} - Attribute wurden geändert',
+
+        'subject'	=> 'email.attributes_changed_subject',
+        'didwhat'	=> 'email.attributes_changed_didwhat',
+        'template'	=> 'emails.master_email'
+
+		/*'subject'	=> 'Ticketsystem: {unique_id} {name} - Attribute wurden geändert',
 		'didwhat'	=> 'hat Attribute geändert: <b>{from}</b> auf <b>{to}</b>',
-		'template'	=> 'emails.master_email'
+		'template'	=> 'emails.master_email'*/
 	),
 
-	'description_changed' => array(
-		'subject'	=> 'Ticketsystem: {unique_id} {name} - Die Beschreibung wurde geändert',
-		'didwhat'	=> 'hat die Beschreibung geändert',
-		'template'	=> 'emails.master_email'
-	),
 
-	'send_notification_at' => array(
-		'subject'	=> 'Ticketsystem: Erinnerung an folgende Tickets',
-		'template'	=> 'emails.send_notification_at'
-	),
-	'notification_at_changed' => array(
-		'subject'	=> 'Ticketsystem: {unique_id} {name} - das Erinnerungsdatum wurde geändert',
-		'didwhat'	=> 'hat das Erinnerungsdatum geändert: von <b>{from}</b> auf <b>{to}</b>',
-		'template'	=> 'emails.master_email'
-	),
-	'finish_at' => array(
-		'subject'	=> 'Ticketsystem: {unique_id} {name} - das Fertigstellungsdatum wurde geändert',
-		'didwhat'	=> 'hat das Fertigstellungsdatum geändert: von <b>{from}</b> auf <b>{to}</b>',
-		'template'	=> 'emails.master_email'
-	),
-
-	'ticket_unteraufgabe' => array(
-		'subject'	=> 'Ticketsystem: {unique_id} {name} wurde in ein Unterticket konvertiert',
-		'didwhat'	=> 'hat das Ticket in ein Unterticket konvertiert',
-		'template'	=> 'emails.master_email'
-	),
 
 ];

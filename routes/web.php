@@ -66,6 +66,7 @@ Route::middleware(['logged_in'])->group(function () {
 
     Route::post( '/filter/save', 'App\Http\Controllers\Filter\Save@execute' );
     Route::get( '/filter/moveto/{filter}', 'App\Http\Controllers\Filter\Moveto@execute' );
+    Route::get( '/filter/delete/{filter}', 'App\Http\Controllers\Filter\Delete@execute' );
 
 
 

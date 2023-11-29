@@ -6,7 +6,7 @@ return array(
     'new_ticket_created_subject'    => 'Ticketmine: {unique_id} {name} wurde angelegt',
     'new_ticket_created_didwhat'    => 'hat ein neues Ticket angelegt',
 
-    'action_changed_subject'                => 'Ticketmine: {unique_id} {name} - Vorgangstype wurde geändert',
+    'action_changed_subject'                => 'Ticketmine: {unique_id} {name} - Vorgangstyp wurde geändert',
     'action_changed_didwhat'                => 'hat den Vorgangstyp von <b>{from}</b> nach <b>{to}</b> geändert',
 
     'priority_changed_subject'                => 'Ticketmine: {unique_id} {name} - Priorität wurde geändert',
@@ -53,4 +53,7 @@ return array(
 
     'ticket_deleted_subject'           => 'Ticketmine: {unique_id} {name} wurde gelöscht',
     'ticket_deleted_didwhat'           => 'Ticket wurde gelöscht',
+
+    'attributes_changed_subject'        => 'Ticketmine: {unique_id} {name} wurde ein Attribut geändert',
+    'attributes_changed_didwhat'        => 'hat Attribut {attribute} geändert: von <b>{from}</b> auf <b>{to}</b>',
 );

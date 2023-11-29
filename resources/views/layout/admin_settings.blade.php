@@ -47,11 +47,14 @@
                 </a>
 
 
+                <?php /*
                 <a class="dropdown-item" href="{{url('groupstate')}}">
                     <svg class="icon me-2">
                         <use xlink:href="{{get_core_ui_path()}}vendors/@coreui/icons/svg/free.svg#cil-object-group "></use>
                     </svg> {{ __('global.groupstate') }}
                 </a>
+                */
+                ?>
 
 
                 <a class="dropdown-item" href="{{url('user')}}">

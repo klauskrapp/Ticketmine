@@ -56,6 +56,25 @@ class Saveattribute extends \App\Http\Controllers\Ticket\View\View
 
             \Queue::later(30, new TicketIndex( $ticket->id ) );
             \App\Helpers\Ticket::toActivityStream( $ticket->id, auth()->user()->id, $ticket->project_id, 'state_changed', $desc );
+
+
+
+            $arrConfig			        = config('ticket.attributes_changed');
+
+            $arrSettings				= array();
+            $arrSettings['who']			= \auth()->user()->name;
+            $arrSettings['didwhat']		= __($arrConfig['didwhat']);
+            $arrSettings['didwhat']		= str_replace( array('{from}', '{to}', '{attribute}'), array( $before, $after, $attribute->name ), $arrSettings['didwhat'] );
+            $arrSettings['content']		= '';
+            $arrSettings['subject']		= Email::getSubject( __($arrConfig['subject']), $ticket );
+            $arrSettings['ticket']		= $ticket;
+
+
+            $cReceiver					= Email::getEmailReceiver( $ticket, $request->get('config_key') );
+            $follower					= Email::getReceivers( $cReceiver );
+
+            Email::sendFinalMail($arrConfig, $arrSettings, $follower);
+
         }
         return $return;
     }

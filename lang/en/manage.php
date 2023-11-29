@@ -1,4 +1,22 @@
 <?php
 return array(
-  'entity_saved_now_add_some_elements' => 'Dashboard saved. Now add some elements'
+  'entity_saved_now_add_some_elements' => 'Dashboard saved. Now add some elements',
+    'name' => 'Name',
+    'create_dashboard' => 'Create Dashboard',
+    'dashboard' => 'Dashboard',
+    'manage_dashboard' => 'Manage dashbard',
+    'is_default' => 'is default?',
+    'existing_elements' => 'Available elements in dashboard',
+    'type' => 'Type',
+    'activitystream' => 'Activitystream',
+    'filterlist' => 'Filterlist',
+    'change_element' => 'Edit Filterelement',
+    'add_new_element'   => 'Add new element',
+    'configure_elements_for_dashboad'   => 'Manage Dashboard',
+    'element_name'      => 'Elements headline',
+    'headline_background_color' => 'Headline of background',
+    'align' => 'Align to',
+    'height' => 'Height',
+    'elements_per_page' => 'Elements per page',
+    'filter' => 'Filter',
 );

@@ -7,10 +7,10 @@
             <div class="card-body">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation" onclick="javascript:jQuery('#save-button').hide();">
-                        <button class="nav-link active" data-coreui-toggle="tab" data-coreui-target="#grid" type="button" role="tab" aria-controls="grid" aria-selected="true">{{__('global.existing_elements')}}</button>
+                        <button class="nav-link active" data-coreui-toggle="tab" data-coreui-target="#grid" type="button" role="tab" aria-controls="grid" aria-selected="true">{{__('manage.existing_elements')}}</button>
                     </li>
                     <li class="nav-item" role="presentation" onclick="javascript:jQuery('#save-button').show();">
-                        <button id="element-tab-element" class="nav-link" data-coreui-toggle="tab" data-coreui-target="#element" type="button" role="tab" aria-controls="grid" aria-selected="true">{{__('global.change_element')}}</button>
+                        <button id="element-tab-element" class="nav-link" data-coreui-toggle="tab" data-coreui-target="#element" type="button" role="tab" aria-controls="grid" aria-selected="true">{{__('manage.change_element')}}</button>
                     </li>
                 </ul>
                 <div class="tab-content">

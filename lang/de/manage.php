@@ -1,4 +1,22 @@
 <?php
 return array(
-  'entity_saved_now_add_some_elements' => 'Dashboard wurde gespeichert. Füge nun Elemente hinzu'
+  'entity_saved_now_add_some_elements' => 'Dashboard wurde gespeichert. Füge nun Elemente hinzu',
+  'name' => 'Name',
+    'create_dashboard' => 'Dashboard erstellen',
+    'dashboard' => 'Dashboard',
+    'manage_dashboard' => 'Dashboard verwalten',
+    'is_default' => 'Standard?',
+    'existing_elements' => 'Verfügbare Elemente im Dashboard',
+    'type' => 'Art',
+    'activitystream' => 'Activitystream',
+    'filterlist' => 'Filterliste',
+    'change_element' => 'Filterelement bearbeiten',
+    'add_new_element'   => 'Neues Element hinzufügen',
+    'configure_elements_for_dashboad'   => 'Konfiguriere des Dashboards',
+    'element_name'      => 'Überschrift des Elementes',
+    'headline_background_color' => 'Hintergrundfarbe der Überschrift',
+    'align' => 'Ausrichtung',
+    'height' => 'Höhe',
+    'elements_per_page' => 'Einträge pro Seite',
+    'filter' => 'Filter',
 );
