@@ -28,7 +28,7 @@ class Dologin extends Controller
     {
         $moveTo     = '';
         if( $request->request->get('email') != '' && $request->request->get('password') != '' ) {
-            $user   = User::where('email', $request->request->get('email'))->where('is_active', '=', 1)->get()->first();
+            $user   = User::where('email', '=', $request->request->get('email'))->where('is_active', '=', 1)->get()->first();
             // register user, if found and password is correct
             if( $user /*&& $user->password == Crypt::generateUserPassword($request->request->get('password'), 'user' ) */) {
                 Auth::login($user);
